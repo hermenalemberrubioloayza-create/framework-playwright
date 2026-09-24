@@ -1,0 +1,17 @@
+{
+  "name": "framework-playwright",
+  "version": "1.0.0",
+  "scripts": {
+    "bddgen": "bddgen",
+    "test": "npx bddgen && npx playwright test",
+    "login": "npx bddgen && npx playwright test --grep @login",
+    "test:ui": "npx bddgen && npx playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "dotenv": "^16.3.1",
+    "playwright-bdd": "^6.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
