@@ -8,13 +8,13 @@ const testDir = defineBddConfig({
 });
 
 export default defineConfig({
-  testDir,
+  testDir, // <-- Usa la configuración de BDD de arriba
   reporter: [
     ['html', { outputFolder: 'target/reports/html', open: 'never' }],
     ['list']
   ],
   use: {
-    headless: false,
+    headless: !!process.env.CI, // Si está en GitHub Actions corre headless; en tu PC normal
     screenshot: 'on',
     trace: 'on',
   },
